@@ -1,0 +1,52 @@
+File name	Patient ID	Pseudonym	Sample ID	Diagnosis from tumorbank	Gender	IGHV.status	trisomy12	DDX3X	NOTCH1	SF3B1	del11q	Leukocyte count	treatStatus
+fmeierab_T190525_CLL_diaPASEF_01_1976.d	P0002	M76U	12PB0459	CLL	m	M	0			1		135000	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_02_1977.d	P0004	JQ6C	12PB0071	CLL	m	M	1					51900	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_03_1978.d	P0018	PQR8	12PB0088	CLL	f	U	0					74490	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_04_1979.d	P0021	M7OV	13PB0657	CLL	m	M	1					193600	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_05_1980.d	P0024	FSHB	12PB0274	CLL	f	M	0					36720	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_06_1981.d	P0027	OVF5	15PB0026	CLL	m	M	0		1			41330	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_07_1982.d	P0029	Q145	11PB0056	CLL	m	M	0					78710	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_08_1983.d	P0036	YNIY	12PB0110	CLL	m	U	0					224300	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_09_1984.d	P0038	FBE8	11PB0359	CLL	f	M	1					206100	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_10_1985.d	P0043	9S37	12PB0190	CLL	m	U	0					56850	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_11_1986.d	P0045	15W9	11PB0055	CLL	f	M	1					45640	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_12_1987.d	P0047	CI7B	14PB0535	CLL	f	M	0			1		81360	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_13_1988.d	P0053	1A5K	15PB0154	CLL	m	M	0					62110	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_14_1989.d	P0069	8E7F	14PB0002	CLL	m	U	0			1		25130	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_15_1990.d	P0087	ZRWN	13PB0003	CLL	f	U	1					82690	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_16_1991.d	P0094	SUEK	12PB0019	CLL	f	M	0					137100	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_17_1992.d	P0098	Y0AO	15PB0089	CLL	m	M	1					99480	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_18_1993.d	P0100	3DMC	13PB0145	CLL	m	M	0					56550	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_19_2003.d	P0105	ECD1	13PB0576	CLL	f	M	0			1	1	161100	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_20_2004.d	P0107	7RHI	13PB0107	CLL	m	M	1					81690	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_21_2005.d	P0108	PK0F	13PB0014	CLL	m	U	0					69680	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_22_2006.d	P0293	P4GM	11PB0371	CLL	m	U	0	1				24100	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_23_2007.d	P0345	0M1Z	14PB0075	CLL	f	M	1					33370	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_24_2008.d	P0352	TMVO	12PB0117	CLL	m	U	0			1	1	30930	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_25_1950.d	P0356	TSYU	12PB0139	CLL	m	U	1					40890	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_26_1951.d	P0359	HP01	14PB0218	CLL	m	U	0					56420	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_27_1952.d	P0474	O1OE	13PB0559	CLL	f	U	1		1			76210	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_28_1953.d	P0484	AJYE	13PB0051	CLL	m	U	0		1			186300	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_29_1954.d	P0487	0XXE	12PB0499	CLL	m	U	1		1			36850	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_30_1955.d	P0494	9ELC	13PB0522	CLL	m	M	1					103200	NA
+fmeierab_T190525_CLL_diaPASEF_31_1956.d	P0518	QAG4	13PB0242	CLL	m	M	0		1			44140	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_32_1957.d	P0538	9MI3	13PB0127	CLL	m	U	0	1				413000	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_33_1958.d	P0581	K49C	13PB0228	CLL	f	U	0					65410	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_34_1959.d	P0611	CLZEPV	13PB0291	CLL	m	M	1					23290	NA
+fmeierab_T190525_CLL_diaPASEF_35_1960.d	P0615	SM9W	14PB0006	CLL	f	M	1					63590	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_36_1961.d	P0641	P3S9	13PB0403	CLL	m	U	0					117300	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_37_1962.d	P0648	72RM	13PB0420	CLL	m	M	1			1		43610	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_38_1963.d	P0679	UAYJ	13PB0593	CLL	f	M	0					57310	NA
+fmeierab_T190525_CLL_diaPASEF_39_1964.d	P0711	PFDT	13PB0571	CLL	m	U	1	1				99550	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_40_1965.d	P0721	JLK0	14PB0398	CLL	f	U	1					22800	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_41_1966.d	P0734	0UBS	14PB0021	CLL	m	U	0		1			106100	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_42_1967.d	P0735	PFR1	13PB0653	CLL	f	M	1					89090	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_43_1968.d	P0747	EMYM	14PB0050	CLL	m	U	0				1	124800	NA
+fmeierab_T190525_CLL_diaPASEF_44_1969.d	P0781	3XLHSB	15PB0182	CLL	f	U	1		1			59070	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_45_1970.d	P0818	MTGWKA	14PB0251	CLL	m	M	0					41460	NA
+fmeierab_T190525_CLL_diaPASEF_46_1971.d	P0880	P1WSWP	14PB0298	CLL	f	U	1	1				217900	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_47_1972.d	P0888	3U3F4R	14PB0326	CLL	m	U	1				1	134300	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_48_1973.d	P0894	PURLLS	15PB0130	CLL	m	U	1					33230	beforeFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_49_1974.d	P1005	QZNEKD	15PB0104	CLL	m	U	1				1	54480	afterFirstTreatment
+fmeierab_T190525_CLL_diaPASEF_50_1975.d	P1075	L8HC49	16PB0056	CLL	m	U	0	1	1	0	1	30540	beforeFirstTreatment
+												
