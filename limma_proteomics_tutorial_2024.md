@@ -8,15 +8,6 @@ output:
 
 
 
-
-``` r
-library(dplyr)
-library(limma)
-library(ggplot2)
-library(ggrepel)
-library(ComplexHeatmap)
-```
-
 ## Introduction
 
 Limma is an R package (developed for use with gene expression microarrays) that is used for differential abundance/expression analysis of proteomics, metabolomics, RNA sequencing, and other 'omics data.
@@ -52,6 +43,18 @@ Franziska Kistner, Justus L. Grossmann, Ludwig R. Sinn, Vadim Demichev
 bioRxiv 2023.06.20.545604; doi: https://doi.org/10.1101/2023.06.20.545604
 
 ## Analysis
+
+Load R packages:
+
+
+``` r
+library(dplyr)
+library(limma)
+library(ggplot2)
+library(ggrepel)
+library(ComplexHeatmap)
+```
+
 ### Read in proteomics data and metadata
 
 Read in proteomics data, clean up:
