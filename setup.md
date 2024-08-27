@@ -7,3 +7,7 @@ download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training
 ```
 download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/limma-proteomics-August-2024/master/Annotation_file_timsTOF.txt", "./Annotation_file_timsTOF.txt")
 ```
+
+```
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/limma-proteomics-August-2024/master/limma_proteomics_tutorial_2024.Rmd", "./limma_proteomics_tutorial_2024.Rmd")
+```
