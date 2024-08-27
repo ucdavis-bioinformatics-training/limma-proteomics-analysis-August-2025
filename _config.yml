@@ -6,9 +6,7 @@ navigation:
   - title: Home
     url: /
 
-  - heading: Setup
   - title: Setup
     url: setup
-  - heading: Analysis in limma
   - title: Analysis in limma
     url: limma_proteomics_tutorial_2024
