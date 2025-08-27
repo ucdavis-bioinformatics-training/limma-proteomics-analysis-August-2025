@@ -227,6 +227,8 @@ Merge in annotation information:
 ```{r}
 results$Protein.Group <- rownames(results)
 results <- left_join(results, anno, by = "Protein.Group")
+results <- dplyr::select(results, Protein.Group, everything())
+write.table(results, file = "DE_results.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 head(results)
 ```
 

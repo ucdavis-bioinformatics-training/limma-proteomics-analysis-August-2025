@@ -270,24 +270,26 @@ Merge in annotation information:
 ``` r
 results$Protein.Group <- rownames(results)
 results <- left_join(results, anno, by = "Protein.Group")
+results <- dplyr::select(results, Protein.Group, everything())
+write.table(results, file = "DE_results.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 head(results)
 ```
 
 ```
-##        logFC   AveExpr         t      P.Value   adj.P.Val        B
-## 1 -7.0562842  5.342274 -6.087076 1.718323e-07 0.001210215 7.066122
-## 2 -1.5809825 15.231864 -5.554732 1.126951e-06 0.002031282 5.347222
-## 3  0.5239282 12.468625  5.445413 1.652756e-06 0.002031282 4.997042
-## 4  1.2098372 13.587557  5.425782 1.770141e-06 0.002031282 4.934294
-## 5  0.4398251 12.845232  5.423379 1.785062e-06 0.002031282 4.926617
-## 6 -0.4183323 15.632817 -5.393540 1.981094e-06 0.002031282 4.831330
-##   Protein.Group Protein.Ids Protein.Names  Genes
-## 1        Q5T7N2      Q5T7N2   LITD1_HUMAN  L1TD1
-## 2        P02545      P02545    LMNA_HUMAN   LMNA
-## 3        Q7Z6L1      Q7Z6L1   TCPR1_HUMAN TECPR1
-## 4        Q8NDB2      Q8NDB2   BANK1_HUMAN  BANK1
-## 5        Q13572      Q13572   ITPK1_HUMAN  ITPK1
-## 6        Q9Y6C9      Q9Y6C9   MTCH2_HUMAN  MTCH2
+##   Protein.Group      logFC   AveExpr         t      P.Value   adj.P.Val
+## 1        Q5T7N2 -7.0562842  5.342274 -6.087076 1.718323e-07 0.001210215
+## 2        P02545 -1.5809825 15.231864 -5.554732 1.126951e-06 0.002031282
+## 3        Q7Z6L1  0.5239282 12.468625  5.445413 1.652756e-06 0.002031282
+## 4        Q8NDB2  1.2098372 13.587557  5.425782 1.770141e-06 0.002031282
+## 5        Q13572  0.4398251 12.845232  5.423379 1.785062e-06 0.002031282
+## 6        Q9Y6C9 -0.4183323 15.632817 -5.393540 1.981094e-06 0.002031282
+##          B Protein.Ids Protein.Names  Genes
+## 1 7.066122      Q5T7N2   LITD1_HUMAN  L1TD1
+## 2 5.347222      P02545    LMNA_HUMAN   LMNA
+## 3 4.997042      Q7Z6L1   TCPR1_HUMAN TECPR1
+## 4 4.934294      Q8NDB2   BANK1_HUMAN  BANK1
+## 5 4.926617      Q13572   ITPK1_HUMAN  ITPK1
+## 6 4.831330      Q9Y6C9   MTCH2_HUMAN  MTCH2
 ##                             First.Protein.Description
 ## 1 LINE-1 type transposase domain-containing protein 1
 ## 2                                        Prelamin-A/C
