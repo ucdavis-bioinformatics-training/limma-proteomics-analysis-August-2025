@@ -14,10 +14,12 @@ knitr::opts_chunk$set(echo = TRUE)
 # install.packages("BiocManager")
 # BiocManager::install("clusterProfiler")
 # BiocManager::install("org.Hs.eg.db")
+# BiocManager::install("kableExtra")
 ```
 
 ```{r, results = "hide"}
 library(clusterProfiler)
+library(kableExtra)
 ```
 
 We will look for KEGG ([Kyoto Encyclopedia of Genes and Genomes](http://kegg.jp/)) pathways that are significantly enriched in our differential expression results, using the Bioconductor package clusterProfiler [1]. This pathway enrichment package implements a variation of the algorithm of Subramanian et al. developed for GSEA [2,3].  
@@ -48,7 +50,7 @@ geneList <- sort(geneList, decreasing = TRUE)
 ```{r, warning = FALSE}
 gse <- gseKEGG(gene = geneList, organism = "hsa", keyType = "uniprot", seed = TRUE)
 tab <- as.data.frame(gse)
-knitr::kable(head(tab, 25), row.names = FALSE)
+kable(head(tab, 25), row.names = FALSE) %>% kable_styling()
 ```
   
 
