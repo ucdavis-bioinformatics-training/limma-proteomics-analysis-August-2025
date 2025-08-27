@@ -11,3 +11,7 @@ download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training
 ```
 download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/limma-proteomics-analysis-August-2025/master/limma_proteomics_tutorial.Rmd", "./limma_proteomics_tutorial.Rmd")
 ```
+
+```
+download.file("https://raw.githubusercontent.com/ucdavis-bioinformatics-training/limma-proteomics-analysis-August-2025/master/KEGG_enrichment.Rmd", "./KEGG_enrichment.Rmd")
+```
