@@ -10,5 +10,5 @@ navigation:
     url: setup
   - title: Analysis in limma
     url: limma_proteomics_tutorial
-  - title: BONUS: Enrichment analysis
+  - title: BONUS-Enrichment analysis
     url: KEGG_enrichment
