@@ -114,7 +114,7 @@ Boxplot of data to evaluate need for between-sample normalization:
 boxplot(dat.trans, xaxt = "n")
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Between sample normalization appears to have already been performed.  We could use the limma function normalizeCyclicLoess to normalize if this wasn't the case:
 
@@ -161,7 +161,7 @@ plotdat$MDS_2 <- coords$y
 ggplot(plotdat, aes(x = MDS_1, y = MDS_2, color = IGHV.status)) + geom_point(size = 3) + theme_bw() + labs(color = "IGHV status")
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 #### MDS plot by gender
 
@@ -169,7 +169,7 @@ ggplot(plotdat, aes(x = MDS_1, y = MDS_2, color = IGHV.status)) + geom_point(siz
 ggplot(plotdat, aes(x = MDS_1, y = MDS_2, color = Gender)) + geom_point(size = 3) + theme_bw()
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 #### MDS plot by leukocyte count
 
@@ -177,7 +177,7 @@ ggplot(plotdat, aes(x = MDS_1, y = MDS_2, color = Gender)) + geom_point(size = 3
 ggplot(plotdat, aes(x = MDS_1, y = MDS_2, color = Leukocyte.count)) + geom_point(size = 3) + theme_bw() + scale_color_viridis_c() + labs(color = "Leukocyte count")
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ### Differential abundance analysis in limma
 
@@ -253,7 +253,7 @@ Results include the following columns:
 * B: log odds of differential abundance
 
 
-How many proteins differ significantly between mutated and unmutated IGHV status subjects:
+How many proteins differ significantly between mutated and unmutated IGHV status subjects?:
 
 
 ``` r
@@ -311,7 +311,7 @@ ggplot(results, aes(x = logFC, y = -log10(P.Value), col = isSig)) + geom_point()
   labs(color = NULL)
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
 
 
 ### Heatmap of top 20 proteins
@@ -333,7 +333,7 @@ col_ha <- HeatmapAnnotation(`IGHV status` = pdata$IGHV.status, annotation_name_s
 Heatmap(plotdat, heatmap_legend_param = list(title = "log2\nNormalized\nAbundance"), show_column_names = FALSE, row_labels = new.rownames, bottom_annotation = col_ha)
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
 
 Plot using Z scores:
 
@@ -352,7 +352,7 @@ col_ha <- HeatmapAnnotation(`IGHV status` = pdata$IGHV.status, annotation_name_s
 Heatmap(plotdat, heatmap_legend_param = list(title = "Z score"), show_column_names = FALSE, row_labels = new.rownames, bottom_annotation = col_ha)
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 
 ### Boxplots of individual proteins
 
@@ -367,14 +367,14 @@ plotdat$LMNA <- as.numeric(dat.filtered["P02545",])
 ggplot(plotdat, aes(x = IGHV.status, y = L1TD1, fill = IGHV.status)) + geom_boxplot() + theme_bw() + theme(legend.position = "none") + labs(x = "IGHV status")
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
 
 
 ``` r
 ggplot(plotdat, aes(x = IGHV.status, y = LMNA, fill = IGHV.status)) + geom_boxplot() + theme_bw() + theme(legend.position = "none") + labs(x = "IGHV status")
 ```
 
-![](limma_proteomics_tutorial_2024_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
+![](limma_proteomics_tutorial_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
 
 ### R session information
 
@@ -383,12 +383,12 @@ sessionInfo()
 ```
 
 ```
-## R version 4.4.1 (2024-06-14 ucrt)
+## R version 4.5.1 (2025-06-13 ucrt)
 ## Platform: x86_64-w64-mingw32/x64
-## Running under: Windows 11 x64 (build 22631)
+## Running under: Windows 11 x64 (build 26100)
 ## 
 ## Matrix products: default
-## 
+##   LAPACK version 3.12.1
 ## 
 ## locale:
 ## [1] LC_COLLATE=English_United States.utf8 
@@ -401,33 +401,32 @@ sessionInfo()
 ## tzcode source: internal
 ## 
 ## attached base packages:
-## [1] grid      stats     graphics  grDevices utils     datasets  methods  
+## [1] grid      stats     graphics  grDevices datasets  utils     methods  
 ## [8] base     
 ## 
 ## other attached packages:
-## [1] ComplexHeatmap_2.20.0 ggrepel_0.9.5         ggplot2_3.5.1        
-## [4] limma_3.60.4          dplyr_1.1.4          
+## [1] ComplexHeatmap_2.24.1 ggrepel_0.9.6         ggplot2_3.5.2        
+## [4] limma_3.64.3          dplyr_1.1.4          
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] sass_0.4.9          utf8_1.2.4          generics_0.1.3     
+##  [1] sass_0.4.10         generics_0.1.4      renv_1.1.5         
 ##  [4] shape_1.4.6.1       digest_0.6.37       magrittr_2.0.3     
-##  [7] RColorBrewer_1.1-3  evaluate_0.24.0     iterators_1.0.14   
+##  [7] evaluate_1.0.4      RColorBrewer_1.1-3  iterators_1.0.14   
 ## [10] circlize_0.4.16     fastmap_1.2.0       foreach_1.5.2      
-## [13] doParallel_1.0.17   jsonlite_1.8.8      GlobalOptions_0.1.2
-## [16] fansi_1.0.6         viridisLite_0.4.2   scales_1.3.0       
-## [19] codetools_0.2-20    jquerylib_0.1.4     cli_3.6.3          
-## [22] rlang_1.1.4         crayon_1.5.3        munsell_0.5.1      
-## [25] withr_3.0.1         cachem_1.1.0        yaml_2.3.10        
-## [28] tools_4.4.1         parallel_4.4.1      colorspace_2.1-1   
-## [31] BiocGenerics_0.50.0 GetoptLong_1.0.5    vctrs_0.6.5        
-## [34] R6_2.5.1            png_0.1-8           stats4_4.4.1       
-## [37] matrixStats_1.3.0   lifecycle_1.0.4     S4Vectors_0.42.1   
-## [40] IRanges_2.38.1      clue_0.3-65         cluster_2.1.6      
-## [43] pkgconfig_2.0.3     pillar_1.9.0        bslib_0.8.0        
-## [46] gtable_0.3.5        glue_1.7.0          Rcpp_1.0.13        
-## [49] statmod_1.5.0       highr_0.11          xfun_0.47          
-## [52] tibble_3.2.1        tidyselect_1.2.1    rstudioapi_0.16.0  
-## [55] knitr_1.48          farver_2.1.2        rjson_0.2.22       
-## [58] htmltools_0.5.8.1   labeling_0.4.3      rmarkdown_2.28     
-## [61] compiler_4.4.1
+## [13] doParallel_1.0.17   jsonlite_2.0.0      GlobalOptions_0.1.2
+## [16] BiocManager_1.30.26 viridisLite_0.4.2   scales_1.4.0       
+## [19] codetools_0.2-20    jquerylib_0.1.4     cli_3.6.5          
+## [22] rlang_1.1.6         crayon_1.5.3        withr_3.0.2        
+## [25] cachem_1.1.0        yaml_2.3.10         tools_4.5.1        
+## [28] parallel_4.5.1      colorspace_2.1-1    GetoptLong_1.0.5   
+## [31] BiocGenerics_0.54.0 vctrs_0.6.5         R6_2.6.1           
+## [34] png_0.1-8           matrixStats_1.5.0   stats4_4.5.1       
+## [37] lifecycle_1.0.4     S4Vectors_0.46.0    IRanges_2.42.0     
+## [40] clue_0.3-66         cluster_2.1.8.1     pkgconfig_2.0.3    
+## [43] pillar_1.11.0       bslib_0.9.0         gtable_0.3.6       
+## [46] glue_1.8.0          Rcpp_1.1.0          statmod_1.5.0      
+## [49] xfun_0.53           tibble_3.3.0        tidyselect_1.2.1   
+## [52] knitr_1.50          farver_2.1.2        rjson_0.2.23       
+## [55] htmltools_0.5.8.1   labeling_0.4.3      rmarkdown_2.29     
+## [58] compiler_4.5.1
 ```
