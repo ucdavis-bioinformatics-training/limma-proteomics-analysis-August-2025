@@ -9,4 +9,4 @@ navigation:
   - title: Setup
     url: setup
   - title: Analysis in limma
-    url: limma_proteomics_tutorial_2024
+    url: limma_proteomics_tutorial
