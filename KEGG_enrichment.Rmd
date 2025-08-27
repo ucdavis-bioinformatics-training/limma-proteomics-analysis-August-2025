@@ -1,0 +1,99 @@
+---
+title: "KEGG enrichment of differential protein expression results"
+author: "Blythe Durbin-Johnson, Ph.D."
+output:
+  html_document:
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# install.packages("BiocManager")
+# BiocManager::install("clusterProfiler")
+# BiocManager::install("org.Hs.eg.db")
+```
+
+```{r, results = "hide"}
+library(clusterProfiler)
+```
+
+We will look for KEGG ([Kyoto Encyclopedia of Genes and Genomes](http://kegg.jp/)) pathways that are significantly enriched in our differential expression results, using the Bioconductor package clusterProfiler [1]. This pathway enrichment package implements a variation of the algorithm of Subramanian et al. developed for GSEA [2,3].  
+
+1. T Wu, E Hu, S Xu, M Chen, P Guo, Z Dai, T Feng, L Zhou, W Tang, L Zhan, X Fu, S Liu, X Bo, and G Yu. clusterProfiler 4.0: A universal enrichment tool for interpreting omics data. The Innovation. 2021, 2(3):100141
+
+2. Subramanian, Aravind, Pablo Tamayo, Vamsi K. Mootha, Sayan Mukherjee, Benjamin L. Ebert, Michael A. Gillette, Amanda Paulovich et al. "Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles." Proceedings of the National Academy of Sciences 102, no. 43 (2005): 15545-15550.
+
+3. G. Korotkevich, V. Sukhov, A. Sergushichev. Fast gene set enrichment
+  analysis. bioRxiv (2019), doi:10.1101/060012
+
+### Setting up input gene list
+As input to the enrichment analysis, we will use the t statistics (log fold changes divided by their standard errors) from the differential expression analysis.
+
+Read in DE results
+```{r}
+DE.results <- read.delim("DE_results.txt")
+```
+
+Create vector of t statistics, where the names are uniprot IDs
+```{r}
+geneList <- DE.results$t
+names(geneList) <- DE.results$Protein.Group
+geneList <- sort(geneList, decreasing = TRUE)
+```
+
+### Run enrichment analysis
+```{r, warning = FALSE}
+gse <- gseKEGG(gene = geneList, organism = "hsa", keyType = "uniprot", seed = TRUE)
+tab <- as.data.frame(gse)
+knitr::kable(head(tab, 25), row.names = FALSE)
+```
+  
+
+### Interpreting the results
+
+Gene set enrichment analysis output includes the following columns:
+
+* setSize: Number of genes in pathway
+
+* enrichmentScore: [GSEA enrichment score](https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Enrichment_Score_(ES)), a statistic reflecting the degree to which a pathway is overrepresented at the top or bottom of the gene list (the gene list here consists of the t-statistics from the DE test).
+
+* NES: [Normalized enrichment score](https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Normalized_Enrichment_Score)
+
+* pvalue: Raw p-value from permutation test of enrichment score
+
+* p.adjust: Benjamini-Hochberg false discovery rate adjusted p-value
+
+* qvalue: Storey false discovery rate adjusted p-value 
+
+* rank: Position in ranked list at which maximum enrichment score occurred
+
+* leading_edge: [Statistics from leading edge analysis](https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideTEXT.htm#_Detailed_Enrichment_Results)
+
+Based on the sign of the normalized enrichment score, the pathway "B cell receptor signaling pathway" is positively enriched and the pathway "Protein processing in endoplasmic reticulum" is negatively enriched.  
+
+This means that the B cell receptor signaling pathway is enriched among proteins with large positive t-statistics (that are higher in mutated subjects).  The pathway Protein processing in endoplasmic reticulum is enriched among proteins with large negative t-statistics (that are lower in mutated subjects).
+
+### Plots
+
+#### Dotplot of top terms
+```{r}
+dotplot(gse)
+```
+
+#### Treeplot of top pathways
+
+Pathways are clustered based on similarity, defined by overlap of which proteins are in that pathway.  Clusters are then labelled with commonly occuring words.
+
+
+```{r, fig.width = 15, fig.height = 12, message = FALSE, warning = FALSE}
+gse2 <- enrichplot::pairwise_termsim(gse)
+enrichplot::treeplot(gse2)
+```
+
+### R session information
+```{r}
+sessionInfo()
+```
