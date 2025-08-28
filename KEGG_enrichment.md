@@ -30,10 +30,9 @@ library(clusterProfiler)
 ## 
 ## Please cite:
 ## 
-## T Wu, E Hu, S Xu, M Chen, P Guo, Z Dai, T Feng, L Zhou, W Tang, L Zhan,
-## X Fu, S Liu, X Bo, and G Yu. clusterProfiler 4.0: A universal
-## enrichment tool for interpreting omics data. The Innovation. 2021,
-## 2(3):100141
+## S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang, Q Wang, B Liu, R Wang,
+## W Xie, T Wu, L Xie, G Yu. Using clusterProfiler to characterize
+## multiomics data. Nature Protocols. 2024, 19(11):3292-3320
 ```
 
 ```
@@ -117,10 +116,10 @@ gse <- gseKEGG(gene = geneList, organism = "hsa", keyType = "uniprot", seed = TR
 
 ``` r
 tab <- as.data.frame(gse)
-kable(head(tab, 25), row.names = FALSE) %>% kable_styling()
+kable(head(tab, 25), row.names = FALSE) %>% kable_styling() %>% scroll_box(width = "1000px")
 ```
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:1000px; "><table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID </th>
@@ -463,7 +462,7 @@ kable(head(tab, 25), row.names = FALSE) %>% kable_styling()
    <td style="text-align:left;"> Q9NP73/Q13724/Q14697/Q9UKM7/P15907/Q10469/Q9BT22/Q9H0U3/Q8TCJ2/P04844/P04843/P46977/P39656/Q16706/P26572 </td>
   </tr>
 </tbody>
-</table>
+</table></div>
   
 
 ### Interpreting the results
