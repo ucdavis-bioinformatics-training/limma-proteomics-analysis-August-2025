@@ -6,6 +6,8 @@ output:
     keep_md: true
 ---
 
+# KEGG enrichment of differential protein expression results
+
 
 
 
@@ -116,10 +118,10 @@ gse <- gseKEGG(gene = geneList, organism = "hsa", keyType = "uniprot", seed = TR
 
 ``` r
 tab <- as.data.frame(gse)
-kable(head(tab, 25), row.names = FALSE) %>% kable_styling() %>% scroll_box(width = "1000px")
+kable(head(tab, 25), row.names = FALSE) %>% kable_styling() %>% scroll_box(width = "800px")
 ```
 
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:1000px; "><table class="table" style="margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:800px; "><table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID </th>

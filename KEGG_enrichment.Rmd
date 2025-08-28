@@ -6,6 +6,8 @@ output:
     keep_md: true
 ---
 
+# KEGG enrichment of differential protein expression results
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -50,7 +52,7 @@ geneList <- sort(geneList, decreasing = TRUE)
 ```{r, warning = FALSE}
 gse <- gseKEGG(gene = geneList, organism = "hsa", keyType = "uniprot", seed = TRUE)
 tab <- as.data.frame(gse)
-kable(head(tab, 25), row.names = FALSE) %>% kable_styling() %>% scroll_box(width = "1000px")
+kable(head(tab, 25), row.names = FALSE) %>% kable_styling() %>% scroll_box(width = "800px")
 ```
   
 
